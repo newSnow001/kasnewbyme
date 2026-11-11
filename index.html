@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DEEPAK WADHWA OFFICIAL</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+ background:#030816;color:white;
+ font-family:Arial,sans-serif;padding:8px;
+}
+
+.ticker{
+ width:100%;overflow:hidden;background:#050b19;
+ border-bottom:1px solid #263149;
+ padding:13px 0;margin-bottom:15px;
+}
+.ticker-track{
+ display:flex;width:max-content;
+ animation:scroll 22s linear infinite;
+}
+.ticker-item{
+ min-width:205px;display:flex;
+ align-items:center;justify-content:center;
+ gap:12px;font:13px monospace;
+}
+.ticker-item b,.ticker-item small{color:#30d69c}
+.ticker-item b{font-size:15px}
+@keyframes scroll{
+ from{transform:translateX(0)}
+ to{transform:translateX(-50%)}
+}
+
+.page{
+ max-width:430px;margin:auto;
+ background:#0e1729;border:1px solid #28344a;
+ border-radius:19px;overflow:hidden;
+}
+.header{
+ padding:14px 17px;background:#050b1a;
+ display:flex;justify-content:space-between;
+ border-bottom:1px solid #263149;
+}
+.terminal{font:bold 13px monospace;letter-spacing:1px;color:#dce3f2}
+.dots{display:flex;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;background:#e4a20d}
+.dot:nth-child(2){background:#e36c19}
+.dot:nth-child(3){background:#e94d58}
+
+.hero{
+ text-align:center;padding:24px 18px;
+ background:radial-gradient(circle at top,#272536,#10192b 65%);
+}
+
+/* PROFILE PHOTO */
+.profile-photo{
+ width:115px;height:115px;
+ margin:0 auto 15px;
+ border-radius:50%;
+ overflow:hidden;
+ border:3px solid #ffbd32;
+ box-shadow:0 0 22px #ffbd3240;
+ background:#18243a;
+}
+.profile-photo img{
+ width:100%;height:100%;
+ object-fit:cover;display:block;
+}
+.photo-upload{
+ display:inline-block;
+ color:#ffbd32;font-size:11px;
+ border:1px solid #a77c2d;
+ border-radius:20px;padding:7px 14px;
+ margin-bottom:15px;cursor:pointer;
+}
+#photoUpload{display:none}
+
+.pro{
+ background:#10bd91;color:#00130e;
+ padding:5px 12px;border-radius:7px;
+ font-size:11px;font-weight:bold;
+}
+h1{font-size:27px;font-weight:900;margin:12px 0 8px}
+.subtitle{
+ color:#ffbd32;font-size:12px;
+ letter-spacing:2px;margin-bottom:21px;
+}
+.badges{
+ display:flex;justify-content:center;
+ gap:7px;flex-wrap:wrap;margin-bottom:24px;
+}
+.badge{
+ padding:8px 10px;border:1px solid;
+ border-radius:25px;font-size:10px;font-weight:bold;
+}
+.vip{color:#ffbd32;border-color:#916922;background:#ffbd3210}
+.live{color:#ff6972;border-color:#873a4a;background:#ff354010}
+.members{color:#27d3f4;border-color:#11627c;background:#16bddd10}
+
+.join-btn{
+ display:block;padding:19px 8px;
+ background:linear-gradient(100deg,#ff9e08,#ffca36,#ff9e08);
+ border-radius:15px;color:#090b10;
+ text-decoration:none;font-size:16px;
+ font-weight:900;box-shadow:0 8px 25px #ffa50035;
+ position:relative;overflow:hidden;
+}
+.join-btn:after{
+ content:"";position:absolute;top:0;left:-100%;
+ width:45%;height:100%;background:#ffffff55;
+ transform:skewX(-25deg);animation:shine 3s infinite;
+}
+@keyframes shine{0%{left:-100%}50%,100%{left:150%}}
+
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ background:#070e20;padding:17px 4px;
+ border-top:1px solid #253047;
+ border-bottom:1px solid #253047;text-align:center;
+}
+.stat{border-right:1px solid #263047}
+.stat:last-child{border:0}
+.stat h2{font-size:22px;color:#ffbd32;margin-bottom:5px}
+.stat:nth-child(2) h2{color:white}
+.stat:nth-child(3) h2{color:#28d4a1}
+.stat p{font-size:10px;color:#929db3;letter-spacing:1px}
+
+.chart-section{padding:22px 17px;border-bottom:1px solid #253047}
+.chart-heading{
+ display:flex;justify-content:space-between;
+ gap:5px;flex-wrap:wrap;font:11px monospace;
+ color:#a1adc4;margin-bottom:16px;
+}
+.green{color:#28d4a1}
+.chart{
+ height:95px;background:#040a19;
+ border:1px solid #253047;border-radius:17px;
+ display:flex;align-items:center;
+ justify-content:space-around;overflow:hidden;
+}
+.candle{width:12px;position:relative;background:#28c99c}
+.candle:before{
+ content:"";position:absolute;width:3px;height:120%;
+ left:5px;top:-10%;background:inherit;
+}
+.red{background:#f0474b}
+.c1{height:48px}.c2{height:65px}.c3{height:38px}
+.c4{height:55px}.c5{height:75px}.c6{height:62px}.c7{height:40px}
+
+.features{padding:20px 14px}
+.feature{
+ display:flex;align-items:center;gap:13px;
+ padding:15px 13px;background:#060d1e;
+ border:1px solid #263149;border-radius:16px;
+ margin-bottom:12px;
+}
+.feature-icon{
+ width:47px;height:47px;min-width:47px;
+ border-radius:13px;display:flex;
+ align-items:center;justify-content:center;
+ font-size:23px;background:#28201a;color:#ffbd32;
+}
+.feature:nth-child(2) .feature-icon{background:#082c2b;color:#29d6a4}
+.feature:nth-child(3) .feature-icon{background:#08243b;color:#23c8ec}
+.feature h3{font-size:14px;margin-bottom:5px}
+.feature p{font-size:10px;color:#929db3;letter-spacing:.5px;line-height:1.5}
+
+.footer{
+ background:#040a19;border-top:1px solid #253047;
+ padding:20px 12px;text-align:center;
+}
+.footer-links{
+ display:flex;justify-content:center;
+ gap:15px;flex-wrap:wrap;margin-bottom:17px;
+}
+.footer-links a{
+ color:#ffbd32;text-decoration:none;font:11px monospace;
+}
+.disclaimer{
+ display:flex;justify-content:space-between;
+ gap:5px;color:#78849c;font-size:9px;
+}
+.adsbig{margin-top:17px;color:#a4aec2;font-size:11px}
+.adsbig a{color:#ffbd32;text-decoration:none;font-weight:bold}
+
+@media(max-width:350px){
+ h1{font-size:23px}
+ .badge{font-size:9px;padding:7px}
+ .join-btn{font-size:14px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="ticker">
+<div class="ticker-track">
+<div class="ticker-item">NIFTY 50 <b>24,510.40</b> <small>▲ +1.35%</small></div>
+<div class="ticker-item">BANKNIFTY <b>48,920.15</b> <small>▲ +1.10%</small></div>
+<div class="ticker-item">SENSEX <b>74,120.80</b> <small>▲ +0.95%</small></div>
+<div class="ticker-item">RELIANCE <b>1,245.60</b> <small>▲ +0.80%</small></div>
+
+<div class="ticker-item">NIFTY 50 <b>24,510.40</b> <small>▲ +1.35%</small></div>
+<div class="ticker-item">BANKNIFTY <b>48,920.15</b> <small>▲ +1.10%</small></div>
+<div class="ticker-item">SENSEX <b>74,120.80</b> <small>▲ +0.95%</small></div>
+<div class="ticker-item">RELIANCE <b>1,245.60</b> <small>▲ +0.80%</small></div>
+</div>
+</div>
+
+<div class="page">
+
+<div class="header">
+<div class="terminal">● TWM_TERMINAL // v3.8</div>
+<div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+</div>
+
+<section class="hero">
+
+<!-- PHOTO WILL APPEAR HERE -->
+<div class="profile-photo">
+<img id="profilePreview" alt="Profile Photo"
+src="logo.jpg">
+</div>
+
+
+<br>
+<span class="pro">✓ PRO</span>
+
+<h1>DEEPAK WADHWA OFFICIAL</h1>
+<p class="subtitle">PRECISION MARKET INTELLIGENCE</p>
+
+<div class="badges">
+<span class="badge vip">♛ VIP STRATEGY</span>
+<span class="badge live">● LIVE SIGNALS</span>
+<span class="badge members">♟ COMMUNITY</span>
+</div>
+
+<a href="https://t.me/+KX_TT2fdwAs0OWVl"
+class="join-btn" target="_blank">
+✈ JOIN FREE TELEGRAM CHANNEL →
+</a>
+
+</section>
+
+<section class="stats">
+<div class="stat"><h2>24/7</h2><p>MARKET UPDATES</p></div>
+<div class="stat"><h2>LIVE</h2><p>TRADING INSIGHTS</p></div>
+<div class="stat"><h2>PRO</h2><p>EDUCATION</p></div>
+</section>
+
+<section class="chart-section">
+<div class="chart-heading">
+<span>🟢 LIVE PATTERN ANALYSIS</span>
+<span class="green">▲ MARKET INSIGHTS</span>
+</div>
+<div class="chart">
+<div class="candle red c1"></div>
+<div class="candle c2"></div>
+<div class="candle c3"></div>
+<div class="candle red c4"></div>
+<div class="candle c5"></div>
+<div class="candle c6"></div>
+<div class="candle red c7"></div>
+<div class="candle c3"></div>
+</div>
+</section>
+
+<section class="features">
+<div class="feature">
+<div class="feature-icon">◔</div>
+<div><h3>Nifty & BankNifty Strategy</h3><p>DAILY MARKET ANALYSIS & BREAKOUT LEVELS</p></div>
+</div>
+<div class="feature">
+<div class="feature-icon">ϟ</div>
+<div><h3>Real-Time Trade Signals</h3><p>MARKET UPDATES & ENTRY EXIT INSIGHTS</p></div>
+</div>
+<div class="feature">
+<div class="feature-icon">♙</div>
+<div><h3>Master Trader Education</h3><p>PRICE ACTION & RISK MANAGEMENT</p></div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="footer-links">
+<a href="#about">[ABOUT]</a>
+<a href="#terms">[TERMS]</a>
+<a href="#disclaimer">[DISCLAIMER]</a>
+<a href="mailto:contact@example.com">[CONTACT]</a>
+</div>
+<div class="disclaimer">
+<span>FOR EDUCATIONAL PURPOSES ONLY</span>
+<span>TRADING INVOLVES RISK</span>
+</div>
+<div class="adsbig">
+AD MANAGED BY
+<a href="https://t.me/+nTRMAouerik1ZGY1" target="_blank">ADSBIG AGENCY</a>
+</div>
+</footer>
+
+</div>
+
+<script>
+document.getElementById("photoUpload").addEventListener("change",function(){
+ const file=this.files[0];
+ if(file && file.type.startsWith("image/")){
+  const reader=new FileReader();
+  reader.onload=function(e){
+   document.getElementById("profilePreview").src=e.target.result;
+  };
+  reader.readAsDataURL(file);
+ }
+});
+</script>
+
+</body>
+</html>
